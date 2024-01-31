@@ -11,8 +11,7 @@
     "lint:prettier": "prettier --check .",
     "fix": "run-s fix:prettier fix:eslint",
     "fix:eslint": "npm run lint:eslint -- --fix",
-    "fix:prettier": "npm run lint:prettier -- --write",
-    "prepare": "husky install"
+    "fix:prettier": "npm run lint:prettier -- --write"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -36,11 +35,5 @@
     "prettier-plugin-organize-imports": "^3.2.4",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
   }
 }
