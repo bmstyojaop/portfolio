@@ -15,7 +15,7 @@ export default function Home() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            testcommit By{' '}
+            testcommit 2 By{' '}
             <Image src='/vercel.svg' alt='Vercel Logo' className='dark:invert' width={100} height={24} priority />
           </a>
         </div>
