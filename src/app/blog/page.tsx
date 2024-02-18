@@ -15,11 +15,13 @@ for (let i = 0; i < 20; i++) {
 
 const BlogPost = () => {
   return (
-    <main className='grid grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] place-items-center gap-4'>
-      {dummy.map((dummy) => {
-        return <BlogPreviewCard key={dummy.key} title={dummy.title} summary={dummy.summary} />;
-      })}
-    </main>
+    <div>
+      <div className='grid grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] place-items-center gap-10'>
+        {dummy.map((dummy) => {
+          return <BlogPreviewCard key={dummy.key} title={dummy.title} summary={dummy.summary} />;
+        })}
+      </div>
+    </div>
   );
 };
 
