@@ -19,7 +19,7 @@ const navLinks: { label: string; path: string }[] = [
 export const Header = () => {
   return (
     // TODO: 背景色をぼかし半透明にする（グラスモーフィズム）
-    <header className=' fixed flex size-full  h-12 max-w-screen-xl justify-between  border bg-gray-200/30 px-3 backdrop-blur-md'>
+    <header className=' fixed flex size-full  h-12 w-screen justify-between  border bg-gray-200/30 px-3 backdrop-blur-lg'>
       <Link href='/' className='relative flex size-full items-center'>
         <Image src='/logo.png' alt='ロゴ' width={36} height={36} priority />
         <h2 className='font-serif text-3xl'>タス</h2>
