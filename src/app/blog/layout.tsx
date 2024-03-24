@@ -13,7 +13,7 @@ const BlogLayout = ({
   return (
     <>
       <Header />
-      <div className='bg h-14 bg-slate-100 bg-gradient-to-r from-cyan-500 to-blue-500 pt-24 md:px-7'>{children}</div>
+      <div className='bg size_full bg-gradient-to-r from-white to-slate-100 pt-24 md:px-7'>{children}</div>
     </>
   );
 };

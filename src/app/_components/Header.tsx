@@ -4,6 +4,10 @@ import Link from 'next/link';
 
 const navLinks: { label: string; path: string }[] = [
   {
+    label: 'Home',
+    path: '/',
+  },
+  {
     label: 'Blog',
     path: '/blog',
   },

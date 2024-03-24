@@ -1,13 +1,13 @@
 import { BlogPreviewCard } from '@/app/blog/_components/BlogPreviewCard';
 
 const dummy: {
-  key: string;
+  id: string;
   title: string;
   summary: string;
 }[] = [];
 for (let i = 0; i < 20; i++) {
   dummy.push({
-    key: i.toString(),
+    id: i.toString(),
     title: '今日の天気予報' + i,
     summary: 'どちらかというと明日の天気予報の方が気になることありますよね',
   });
@@ -15,9 +15,9 @@ for (let i = 0; i < 20; i++) {
 
 const BlogPost = () => {
   return (
-    <div className='grid grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] place-items-center gap-10 bg-slate-100'>
+    <div className='flex size-full flex-col place-content-center place-items-center items-center gap-10'>
       {dummy.map((dummy) => {
-        return <BlogPreviewCard key={dummy.key} title={dummy.title} summary={dummy.summary} />;
+        return <BlogPreviewCard key={dummy.id} id={dummy.id} title={dummy.title} summary={dummy.summary} />;
       })}
     </div>
   );
