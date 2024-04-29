@@ -39,7 +39,12 @@ const Pre = ({ children, ...props }: ClassAttributes<HTMLPreElement> & HTMLAttri
   }
 
   const childProps = 'props' in children ? children.props : {};
-  const { children: code } = childProps;
+  const { className, children: code } = childProps;
+  const language = className?.replace('language-', '');
 
-  return <SyntaxHighlighter style={darcula}>{String(code).replace(/\n$/, '')}</SyntaxHighlighter>;
+  return (
+    <SyntaxHighlighter language={language} style={darcula}>
+      {String(code).replace(/\n$/, '')}
+    </SyntaxHighlighter>
+  );
 };
