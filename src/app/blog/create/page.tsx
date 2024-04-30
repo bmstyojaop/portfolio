@@ -11,16 +11,17 @@ const CreateBlog = () => {
   const [text, setText] = useState('');
 
   return (
-    <div className='grid grid-cols-2'>
+    <div className='grid h-screen grid-cols-2'>
       <textarea
         value={text}
+        spellCheck={false}
+        className='outline-none'
         onChange={(e) => {
           setText(e.target.value);
         }}
-        className=''
       />
-      <div className='markdown'>
-        <Markdown remarkPlugins={[remarkGfm]} components={{ pre: Pre }}>
+      <div className='markdown bg-slate-800 text-white'>
+        <Markdown remarkPlugins={[remarkGfm]} components={{ pre: Pre }} className='text-white'>
           {text}
         </Markdown>
       </div>
