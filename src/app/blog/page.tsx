@@ -15,7 +15,7 @@ for (let i = 0; i < 20; i++) {
 
 const BlogPost = () => {
   return (
-    <div className='flex size-full flex-col place-content-center place-items-center items-center gap-10'>
+    <div className='flex size-full  flex-col place-content-center place-items-center items-center gap-10'>
       {dummy.map((dummy) => {
         return <BlogPreviewCard key={dummy.id} id={dummy.id} title={dummy.title} summary={dummy.summary} />;
       })}
