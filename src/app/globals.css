@@ -94,6 +94,10 @@
   @apply border py-1 px-3;
 }
 
+.markdown hr {
+  @apply py-2;
+}
+
 /* Override pygments style background color. */
 .markdown .highlight pre {
   @apply bg-gray-100 !important;

@@ -11,17 +11,17 @@ const CreateBlog = () => {
   const [text, setText] = useState('');
 
   return (
-    <div className='grid h-screen grid-cols-2'>
+    <div className='grid h-screen grid-cols-2 divide-x-2 overflow-scroll'>
       <textarea
         value={text}
         spellCheck={false}
-        className='outline-none'
+        className='p-4 outline-none'
         onChange={(e) => {
           setText(e.target.value);
         }}
       />
-      <div className='markdown bg-slate-800 text-white'>
-        <Markdown remarkPlugins={[remarkGfm]} components={{ pre: Pre }} className='text-white'>
+      <div className='markdown overflow-scroll bg-white p-4'>
+        <Markdown remarkPlugins={[remarkGfm]} components={{ pre: Pre }}>
           {text}
         </Markdown>
       </div>
@@ -41,11 +41,20 @@ const Pre = ({ children, ...props }: ClassAttributes<HTMLPreElement> & HTMLAttri
 
   const childProps = 'props' in children ? children.props : {};
   const { className, children: code } = childProps;
-  const language = className?.replace('language-', '');
+  const classList = className ? className.split(':') : [];
+  const language = classList[0]?.replace('language', '');
+  const fileName = classList[1];
 
   return (
-    <SyntaxHighlighter language={language} style={darcula}>
-      {String(code).replace(/\n$/, '')}
-    </SyntaxHighlighter>
+    <section>
+      {fileName && (
+        <div className=' bg-zinc-950 px-2 text-sm italic text-white'>
+          <span>{fileName}</span>
+        </div>
+      )}
+      <SyntaxHighlighter language={language} style={darcula}>
+        {code === null || code === undefined ? '' : String(code).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    </section>
   );
 };
